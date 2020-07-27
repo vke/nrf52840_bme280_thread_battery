@@ -330,6 +330,23 @@ size_t fill_info_packet(uint8_t *pBuffer, size_t stBufferSize)
 	if (cborError != CborNoError)
 		return 0;
 
+	uint8_t macAddr[8];
+	otPlatRadioGetIeeeEui64(thread_ot_instance_get(), macAddr);
+
+	cborError = cbor_encode_text_stringz(&encoderMap, "m");
+	if (cborError != CborNoError)
+		return 0;
+	cborError = cbor_encode_byte_string(&encoderMap, macAddr, sizeof(macAddr));
+	if (cborError != CborNoError)
+		return 0;
+
+	cborError = cbor_encode_text_stringz(&encoderMap, "e");
+	if (cborError != CborNoError)
+		return 0;
+	cborError = cbor_encode_byte_string(&encoderMap, (const uint8_t *)otLinkGetExtendedAddress(thread_ot_instance_get()), sizeof(otExtAddress));
+	if (cborError != CborNoError)
+		return 0;
+
 	cborError = cbor_encode_text_stringz(&encoderMap, "a");
 	if (cborError != CborNoError)
 		return 0;
