@@ -1,6 +1,6 @@
 <!DOCTYPE CrossStudio_Project_File>
-<solution Name="nrf52840_bme280_thread" target="8" version="2">
-  <project Name="nrf52840_bme280_thread">
+<solution Name="nrf52840_bme280_thread_battery" target="8" version="2">
+  <project Name="nrf52840_bme280_thread_battery">
     <configuration
       Name="Common"
       arm_architecture="v7EM"
@@ -78,14 +78,15 @@
     <folder Name="nRF_Drivers">
       <file file_name="$(PATH_TO_SDK)/integration/nrfx/legacy/nrf_drv_twi.c" />
       <file file_name="$(PATH_TO_SDK)/integration/nrfx/legacy/nrf_drv_clock.c" />
+      <file file_name="$(PATH_TO_SDK)/integration/nrfx/legacy/nrf_drv_power.c" />
       <file file_name="$(PATH_TO_SDK)/components/drivers_nrf/nrf_soc_nosd/nrf_nvic.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/hal/nrf_nvmc.c" />
       <file file_name="$(PATH_TO_SDK)/components/drivers_nrf/nrf_soc_nosd/nrf_soc.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/soc/nrfx_atomic.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_clock.c" />
+      <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_power.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_gpiote.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_nvmc.c" />
-      <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_pwm.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_saadc.c" />
       <file file_name="$(PATH_TO_SDK)/modules/nrfx/drivers/src/nrfx_twi.c" />
     </folder>
